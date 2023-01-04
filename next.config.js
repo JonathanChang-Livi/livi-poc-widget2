@@ -1,33 +1,29 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
+
+const { NextFederationPlugin } = require('@module-federation/nextjs-mf');
+
+const nextConfig = {
   reactStrictMode: true,
   webpack: (config, options) => { // webpack configurations
+    const { isServer } = options;
     config.plugins.push(
-      new options.webpack.container.ModuleFederationPlugin({
-        name:"widget2",
-        filename: "remoteEntry.js", // remote file name which will used later
-        remoteType: "var",
-        exposes: { // expose all component here.
-          "./demo": "./components/demo-widget"
+      new NextFederationPlugin({
+        name: 'widget2',
+        remotes: {
         },
-        shared: [
-          {
-            react: {
-              eager: true,
-              singleton: true,
-              requiredVersion: false,
-            }
-          },
-          {
-            "react-dom": {
-              eager: true,
-              singleton: true,
-              requiredVersion: false,
-            }
-          },
-        ]
+        filename: 'static/chunks/remoteEntry.js',
+        exposes: {
+          './demo': './components/demo-widget',
+          // './checkout': './pages/checkout',
+        },
+        shared: {
+          // whatever else
+        },
       })
-    )
-    return config
+    );
+
+    return config;
   }
 }
+
+module.exports = nextConfig
