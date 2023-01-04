@@ -4,11 +4,11 @@ import { Input } from "livi-poc-form"
 const DemoWidget = () => {
     return (
         <Card override>
-            <Stack className="gap-5">
+            <Stack spacing='xl'>
                 <Input type="text" placeholder="search" id="search" validate={() => true} className='p-2 px-3 bg-primary text-secondary font-bold rounded-lg' override></Input>
-                <Stack spacing='sm'>
+                <Stack spacing='sm' className='my-4'>
                     <p className="text-sm text-slate-300 font-semibold">Welcome Back, </p>
-                    <p className="text-2xl text-primary font-extrabold">liviSave User!</p>
+                    <p className="text-2xl text-primary font-black">liviSave User!</p>
                 </Stack>
             </Stack>
         </Card>
