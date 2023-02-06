@@ -19,7 +19,7 @@ module.exports = {
         info: {
           DEFAULT: "#f2f4f5",
           dark: "#787f8e"
-        },
+        }
       },
     },
   },
