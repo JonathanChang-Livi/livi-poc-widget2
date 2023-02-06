@@ -39,18 +39,20 @@ const DemoWidget = () => {
                 <Title className="font-black" children="WorkStation" />
                 <Title bold className=" text-blue-500 hover:underline hover:font-black" children="View All >" />
             </div>
-            <div className="p-4 flex flex-col items-center justify-between">
-                <div className="relative max-w-[150px]">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-                        <Title className="text-4xl font-black" children={`${demoData.map(x => x.data).reduce((a, b) => a + b)}`}/>
-                        <p>tasks</p>
+            <div className="p-4 flex flex-col h-full items-center justify-between">
+                <div className="h-full flex justify-center items-center">
+                    <div className="relative max-w-[150px]">
+                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+                            <Title className="text-4xl font-black" children={`${demoData.map(x => x.data).reduce((a, b) => a + b)}`} />
+                            <p>tasks</p>
+                        </div>
+                        <Doughnut
+                            data={data}
+                        />
                     </div>
-                    <Doughnut
-                        data={data}
-                    />
                 </div>
                 <div className="w-full mt-4 flex flex-col items-start justify-between">
-                    <Title className="font-black" children="Pending For Approval" />
+                    <Title className="font-black" children="Summary" />
                     {
                         demoData.map(x => {
                             return (
