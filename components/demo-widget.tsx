@@ -52,7 +52,7 @@ const DemoWidget = () => {
                     </div>
                 </div>
                 <div className="w-full mt-4 flex flex-col items-start justify-between">
-                    <Title className="font-black" children="Summary" />
+                    <Title className="font-black" children="Pending For Approval" />
                     {
                         demoData.map(x => {
                             return (
