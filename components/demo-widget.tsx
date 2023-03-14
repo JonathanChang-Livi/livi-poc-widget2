@@ -14,6 +14,7 @@ const demoData: WorkstationData[] = [
     { label: "Transaction", color: "#88b1DB", data: 7 },
     { label: "Personal Management", color: "#CD808B", data: 4 },
     { label: "Settings", color: "#D3BC8D", data: 2 },
+    { label: "Test", color: "#000000", data: 10 },
 ]
 
 const ComputeData = (data: WorkstationData[]) => {
